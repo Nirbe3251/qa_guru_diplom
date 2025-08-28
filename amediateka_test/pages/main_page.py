@@ -2,14 +2,28 @@ from selene import be, have, browser, by
 
 class MainPage:
     def browser_open(self):
-        browser.open("https://www.dns-shop.ru/")
+        browser.open("https://www.amediateka.ru/")
 
-    def search_product(self, value):
-        browser.element("[name='q']").type(value).press_enter()
+    def click_search_button(self):
+        browser.element('[aria-label="search"]').click()
 
-    def open_product_card(self):
-        browser.element("[class='catalog-product__name']").click()
+    def search_series(self, value):
+        browser.element('.SearchInput_input__OVDm6').type(value)
 
-    def add_product_in_favorites(self):
-        browser.element("[class='button-ui button-ui_grey button-ui_md button-ui_icon wishlist-btn wishlist-btn_empty']").click()\
+    def search_film(self, value):
+        browser.element('.SearchInput_input__OVDm6').type(value)
+
+    def search_genre(self, value):
+        browser.element('.SearchInput_input__OVDm6').type(value)
+
+    def click_the_genre(self):
+        browser.element('.visually-hidden').click()
+
+    def choice_genre_on_the_main_page(self, value):
+        browser.element(by.text(value)).click()
+
+    def open_series(self):
+        browser.element()
+
+
         
